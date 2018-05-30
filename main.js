@@ -29,10 +29,12 @@ var handleButtonClick = function() {
   if (select.value === "Earth") {
     var earthAgeCalculation = Math.floor(input.value / earthYrInSecs);
     return pTag.innerText = "On " + select.value + " you're the grand old age of " + earthAgeCalculation + " !";
+  } else if (select.value === "Pick a planet") {
+    return pTag.innerText = "You space cadet! You need to pick a planet first... sigh...";
   } else {
     var lowerCasePlanet = select.value.toLowerCase();
-    var planetAge = Math.floor(input.value * orbitalPeriods[lowerCasePlanet]);
-    pTag.innerText = "On " + select.value + " you're the grand old age of " + planetAge + " !";
+    var planetAge = Math.floor((input.value / earthYrInSecs) * orbitalPeriods[lowerCasePlanet]);
+    return pTag.innerText = "On " + select.value + " you're the grand old age of " + planetAge + " !";
   }
 }
 
