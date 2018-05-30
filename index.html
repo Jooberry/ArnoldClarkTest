@@ -18,16 +18,18 @@
     <div class="col-md-4 col-md-offset-4">
       <form id="form" onsubmit="return false">
         <input type="number" id="replyNumber" min="0" step="1" data-bind="value:replyNumber" />
-        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>Earth</option>
-                            <option>Mercury</option>
-                            <option>Venus</option>
-                            <option>Mars</option>
-                            <option>Jupiter</option>
-                            <option>Saturn</option>
-                            <option>Uranus</option>
-                            <option>Neptune</option>
-                            <option>Pluto</option>
+        <h3>Pick a planet</h3>
+        <select class="form-control" id="planet-select">
+            <option selected>Pick a planet</option>
+            <option>Earth</option>
+            <option>Mercury</option>
+            <option>Venus</option>
+            <option>Mars</option>
+            <option>Jupiter</option>
+            <option>Saturn</option>
+            <option>Uranus</option>
+            <option>Neptune</option>
+            <option>Pluto</option>
         </select>
         <button type="button" class="btn btn-info">Find Age</button>
       </form>

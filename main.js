@@ -24,10 +24,16 @@ var orbitalPeriods = {
 
 var handleButtonClick = function() {
   var input = document.querySelector("input");
-  var select = document.querySelector("select");
+  var select = document.getElementById("planet-select");
   var pTag = document.querySelector("#age-result");
-  console.log(select);
-  pTag.innerText = "On " + select.value + " you're the incredible old age of " + input.value;
+  if (select.value === "Earth") {
+    var earthAgeCalculation = Math.floor(input.value / earthYrInSecs);
+    return pTag.innerText = "On " + select.value + " you're the grand old age of " + earthAgeCalculation + " !";
+  } else {
+    var lowerCasePlanet = select.value.toLowerCase();
+    var planetAge = Math.floor(input.value * orbitalPeriods[lowerCasePlanet]);
+    pTag.innerText = "On " + select.value + " you're the grand old age of " + planetAge + " !";
+  }
 }
 
 var button = document.querySelector("button");
