@@ -17,7 +17,15 @@
     <br>
     <div class="col-md-4 col-md-offset-4">
       <form id="form" onsubmit="return false">
-        <input type="number" id="replyNumber" min="0" step="1" data-bind="value:replyNumber" />
+        <div class="form-inline">
+          <h3>Find your birthdate</h3>
+          <label for="example-date-input" class="col-2 col-form-label"></label>
+          <div class="col-10">
+            <input class="form-control" type="date" id="example-date-input">
+          </div>
+        </div>
+        <br>
+        <!-- <input type="number" id="replyNumber" min="0" step="1" data-bind="value:replyNumber" /> -->
         <h3>Pick a planet</h3>
         <select class="form-control" id="planet-select">
             <option selected>Pick a planet</option>
@@ -31,6 +39,7 @@
             <option>Neptune</option>
             <option>Pluto</option>
         </select>
+        <br>
         <button type="button" class="btn btn-info">Find Age</button>
       </form>
       <div id="age-result">
