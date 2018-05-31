@@ -1,16 +1,21 @@
 body, html {
-    height: 100%;
-    color: white;
+  height: 100%;
+  color: #ff6600;
 }
 .bg {
-    /* The image used */
-    background-image: url("space.jpg");
+  background-image: url("space.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-    /* Full height */
-    height: 100%;
+#form {
+  padding-top: 50px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 120%;
+}
 
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.p {
+  font-size: 20px;
 }

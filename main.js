@@ -1,4 +1,3 @@
-
 var earthYrInSecs = 31557600
 var earthYrInDays = 365.25
 
@@ -28,14 +27,15 @@ var handleButtonClick = function() {
   var dateInput = document.querySelector("#example-date-input");
   var dateResult = document.getElementById("date-input");
   // console.log(typeof(dateInput.value));
-  if (dateInput.value === "") {
-    dateResult.innerText = "Don't you know your own birthday? Put it in!";
-  }
 
   var select = document.getElementById("planet-select");
   var ageResult = document.querySelector("#age-result");
   var earthAgeCalculation = Math.floor(daysDiff / earthYrInDays);
-  if (select.value === "Earth") {
+
+  if (dateInput.value === "" && select.value === "Earth") {
+    dateResult.innerText = "Don't you know your own birthday? Put it in!";
+    ageResult.innerText = "";
+  } else if (select.value === "Earth") {
     return ageResult.innerText = "On " + select.value + " you're the grand old age of " + earthAgeCalculation + " !";
   } else if (select.value === "Pick a planet") {
     return ageResult.innerText = "What a space cadet! You need to pick a planet first... sigh...";
