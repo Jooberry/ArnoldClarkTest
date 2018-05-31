@@ -25,17 +25,24 @@ var handleButtonClick = function() {
   var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
   // console.log(daysDiff);
 
+  var dateInput = document.querySelector("#example-date-input");
+  var dateResult = document.getElementById("date-input");
+  // console.log(typeof(dateInput.value));
+  if (dateInput.value === "") {
+    return dateResult.innerText = "Don't you know your own birthday? Put it in!";
+  }
+
   var select = document.getElementById("planet-select");
-  var pTag = document.querySelector("#age-result");
+  var ageResult = document.querySelector("#age-result");
   var earthAgeCalculation = Math.floor(daysDiff / earthYrInDays);
   if (select.value === "Earth") {
-    return pTag.innerText = "On " + select.value + " you're the grand old age of " + earthAgeCalculation + " !";
+    return ageResult.innerText = "On " + select.value + " you're the grand old age of " + earthAgeCalculation + " !";
   } else if (select.value === "Pick a planet") {
-    return pTag.innerText = "What a space cadet! You need to pick a planet first... sigh...";
+    return ageResult.innerText = "What a space cadet! You need to pick a planet first... sigh...";
   } else {
     var lowerCasePlanet = select.value.toLowerCase();
     var planetAge = Math.floor(earthAgeCalculation * orbitalPeriods[lowerCasePlanet]);
-    return pTag.innerText = "On " + select.value + " you're the grand old age of " + planetAge + " !";
+    return ageResult.innerText = "On " + select.value + " you're the grand old age of " + planetAge + " !";
   }
 }
 

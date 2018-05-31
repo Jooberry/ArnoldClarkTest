@@ -1,5 +1,6 @@
 body, html {
     height: 100%;
+    color: white;
 }
 .bg {
     /* The image used */
@@ -12,8 +13,4 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-body {
-  color: white;
 }
