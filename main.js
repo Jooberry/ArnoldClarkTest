@@ -2,6 +2,7 @@ var earthYrInSecs = 31557600
 var earthYrInDays = 365.25
 
 var orbitalPeriods = {
+  earth: 1,
   mercury: 0.2408467,
   venus: 0.61519726,
   mars: 1.8808158,
@@ -32,17 +33,17 @@ var handleButtonClick = function() {
   var ageResult = document.querySelector("#age-result");
   var earthAgeCalculation = Math.floor(daysDiff / earthYrInDays);
 
-  if (dateInput.value === "" && select.value === "Earth") {
+  if (dateInput.value === "" && select.value === "Pick a planet") {
+    dateResult.innerText = "You don't want to know?";
+    ageResult.innerText = "At all?";
+  } else if (dateInput.value === "") {
     dateResult.innerText = "Don't you know your own birthday? Put it in!";
-    ageResult.innerText = "";
-  } else if (select.value === "Earth") {
-    return ageResult.innerText = "On " + select.value + " you're the grand old age of " + earthAgeCalculation + " !";
   } else if (select.value === "Pick a planet") {
-    return ageResult.innerText = "What a space cadet! You need to pick a planet first... sigh...";
-  } else if (dateResult.innerText === "") {
+    ageResult.innerText = "What a space cadet! You need to pick a planet first... sigh...";
+  } else {
     var lowerCasePlanet = select.value.toLowerCase();
     var planetAge = Math.floor(earthAgeCalculation * orbitalPeriods[lowerCasePlanet]);
-    return ageResult.innerText = "On " + select.value + " you're the grand old age of " + planetAge + " !";
+    ageResult.innerText = "On " + select.value + " you're the grand old age of " + planetAge + " !";
   }
 }
 
