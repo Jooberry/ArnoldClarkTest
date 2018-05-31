@@ -29,7 +29,7 @@ var handleButtonClick = function() {
   var dateResult = document.getElementById("date-input");
   // console.log(typeof(dateInput.value));
   if (dateInput.value === "") {
-    return dateResult.innerText = "Don't you know your own birthday? Put it in!";
+    dateResult.innerText = "Don't you know your own birthday? Put it in!";
   }
 
   var select = document.getElementById("planet-select");
@@ -39,7 +39,7 @@ var handleButtonClick = function() {
     return ageResult.innerText = "On " + select.value + " you're the grand old age of " + earthAgeCalculation + " !";
   } else if (select.value === "Pick a planet") {
     return ageResult.innerText = "What a space cadet! You need to pick a planet first... sigh...";
-  } else {
+  } else if (dateResult.innerText === "") {
     var lowerCasePlanet = select.value.toLowerCase();
     var planetAge = Math.floor(earthAgeCalculation * orbitalPeriods[lowerCasePlanet]);
     return ageResult.innerText = "On " + select.value + " you're the grand old age of " + planetAge + " !";
